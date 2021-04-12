@@ -70,5 +70,15 @@ export default class CarsController {
   bid(id) {
     carsService.bid(id)
   }
+  showCars() {
+    let carElem = document.getElementById('showcars')
 
+    if (carElem.classList.contains('d-none')) {
+      carElem.classList.add('d-block')
+      carElem.classList.remove('d-none')
+    } else {
+      carElem.classList.add('d-none')
+      carElem.classList.remove('d-block')
+    }
+  }
 }
