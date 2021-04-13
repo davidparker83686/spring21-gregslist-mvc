@@ -1,13 +1,13 @@
 export default class Car {
-  constructor({ make, model, year, price, description, imgUrl, id }) {
+  constructor({ make, model, year, price, imgUrl, description, id }) {
     // NOTE it is no longer our job to generate Id's
     this.id = id
     this.make = make
     this.model = model
     this.year = year
     this.price = price
-    this.description = description
     this.imgUrl = imgUrl
+    this.description = description
 
   }
 
@@ -17,8 +17,8 @@ export default class Car {
       <div class="card shadow">
           <img class="card-img-top" src="${this.imgUrl}" alt="">
           <div class="card-body">
-              <h4 class="card-title">${this.make} | ${this.model} | ${this.year}</h4>
-              <p class="card-text">${this.description} - $${this.price.toFixed(2)}</p>
+              <h4 class="card-title">${this.makeTitle()} | ${this.modelTitle()} | ${this.year}</h4>
+              <p class="card-text">$${this.price.toFixed(2)} - '${this.description}'</p>
           </div>
           <div class="px-3 pb-3 d-flex justify-content-between">
               <button type="button" class="btn btn-danger" onclick="app.carsController.deleteCar('${this.id}')">Delete</button>
@@ -28,4 +28,15 @@ export default class Car {
     </div>
     `
   }
+
+  makeTitle() {
+    let makeTitle = this.make
+    return makeTitle.toUpperCase()
+  }
+  modelTitle() {
+    let modelTitle = this.model
+    return modelTitle.toUpperCase()
+  }
+
+
 }

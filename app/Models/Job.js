@@ -3,10 +3,10 @@ export default class Job {
 
     this._id = _id
     this.company = company
-    this.description = description
     this.jobTitle = jobTitle
     this.hours = hours
     this.rate = rate
+    this.description = description
     this.__v = __v
     this.id = id
   }
@@ -19,9 +19,9 @@ export default class Job {
       <div class="card shadow">
           <img class="card-img-top" src="${this.imgUrl}" alt="">
           <div class="card-body">
-              <h4 class="card-title">${this.company} | ${this.jobTitle} </h4>
-              <p class="card-text">${this.hours} - $${this.rate} per hour </p>
-              <p class="card-text">${this.description}</p>
+              <h4 class="card-title">${this.companyTitle()} | ${this.jobTitle} </h4>
+              <p class="card-text">${this.hours} - $${this.rate} per hr </p>
+              <p class="card-text">'${this.description}'</p>
           </div>
           <div class="px-3 pb-3 d-flex justify-content-between">
               <button type="button" class="btn btn-danger" onclick="app.jobsController.deleteJob('${this.id}')">Delete</button>
@@ -30,4 +30,12 @@ export default class Job {
     </div>
     `
   }
+
+  companyTitle() {
+    let companyTitle = this.company
+    return companyTitle.toUpperCase()
+  }
+
+
+
 }

@@ -19,9 +19,9 @@ export default class House {
       <div class="card shadow">
           <img class="card-img-top" src="${this.imgUrl}" alt="">
           <div class="card-body">
-              <h4 class="card-title">${this.bedrooms} Bed | ${this.bathrooms} Bath | ${this.levels} level</h4>
-              <h4 class="card-title">${this.year}</h4>
-              <p class="card-text">${this.description} - $${this.price.toFixed(2)}</p>
+              <h4 class="card-title">${this.bedrooms} BED | ${this.bathrooms} BATH | ${this.levels} LVL</h4>
+              <h4 class="card-title">$${this.price.toFixed(2)}</h4>
+              <p class="card-text">${this.year} - '${this.description}'</p>
           </div>
           <div class="px-3 pb-3 d-flex justify-content-between">
               <button type="button" class="btn btn-danger" onclick="app.housesController.deleteHouse('${this.id}')">Delete</button>
